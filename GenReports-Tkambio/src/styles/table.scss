@@ -1,0 +1,62 @@
+$background-table: rgba(69, 99, 230, 1);
+$border-color: rgba(196, 196, 196, 1);
+$color:rgba(255, 255, 255, 1);
+
+.table-background{
+    background-color: $background-table;
+    padding-inline: 30px;
+    padding-block: 10px 30px;
+    border-radius: 10px;
+    width:max-content;
+}
+table{
+    background-color: $background-table;
+    color: rgba(255, 255, 255, 1);
+
+    border-collapse:collapse;
+    border-radius: 10px;
+}
+thead {
+    border-bottom: 4px solid $border-color
+}
+tr:nth-child(1){
+    border-bottom: 1px solid $border-color
+}
+tr:nth-child(5){
+    border-bottom: none;
+}
+th{
+    padding-bottom: 10px;
+}
+td{
+    padding-block: 15px;
+    padding-inline: 73px;
+}
+table tbody tr td:nth-child(1){ padding-left: 0px; }
+table tbody tr td:nth-child(5){ padding-right: 0px; }
+.separator{
+    margin: 0px;
+    padding: 0px;
+}
+.separator-line{
+    background-color: $border-color;
+    width: 4px;
+    height: 24px;
+    position:relative;
+}
+
+
+th:nth-child(1){ text-align: left; }
+th:nth-child(3){ text-align: center; }
+th:nth-child(5){ text-align: right; }
+
+table tr td:nth-child(1){ text-align: left; }
+table tr td:nth-child(3){ text-align: center; }
+table tr td:nth-child(5){ text-align: right; }
+
+.separator-column{
+    position:relative;
+    width: 100%;
+    height: 3px;
+    background-color: $border-color;
+}
