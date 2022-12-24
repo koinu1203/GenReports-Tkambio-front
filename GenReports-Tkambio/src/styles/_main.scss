@@ -1,5 +1,61 @@
+@import './_fonts.scss';
 @import './header.scss';
+@import './button.scss';
+@import './table.scss';
+@import './Input.scss';
+@import './modal.scss';
+
+$background-body: #E5E5E5;
+$spam-color: rgba(105, 105, 105, 1);
+$gray-color: rgba(86, 86, 86, 1);
+
 
 body{
     margin: 0;
+    font-family: "ArgentumSans-Regular", Arial, Helvetica, sans-serif;
+    background-color: $background-body;
+    #app{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+}
+h1{
+    font-family: "ArgentumSans-Regular";
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 33px;
+    text-align: center;
+
+}
+h2{
+    margin: 0px;
+    font-family: "ArgentumSans-Bold";
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 28px;
+    letter-spacing: 0em;
+    text-align: center;
+
+}
+h3{
+    margin: 0px;
+    font-family: "ArgentumSans-Light";
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: $gray-color;
+
+}
+span{
+    font-family: "ArgentumSans-Light";
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 16px;
+    letter-spacing: 0.20000000298023224px;
+    color: $spam-color;
+    text-align: left;
 }
