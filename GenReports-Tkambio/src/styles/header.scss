@@ -1,7 +1,12 @@
 header{
     overflow: hidden;
     background: linear-gradient(180deg, #02ADF1 -2.37%, #4562E6 124.84%, #4563E6 124.84%);
-    position:fixed;
+    position:relative;
+    display: flex;
+    justify-content: center;
     top: 0%;
     width: 100%;
+    padding-block: 20px;
+    margin-block: auto;
 }
+
