@@ -1,0 +1,40 @@
+$background-text: rgba(255, 255, 255, 1);
+$border-color:rgba(177, 177, 177, 1);
+.input-date-text{
+    min-width: 221px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    left: 0px;
+    span{
+        position:relative;
+        width: fit-content;
+        bottom: 58px;
+        left:8px;
+        background-color: $background-text;
+    }
+    &-content{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 6px;
+        border-style: solid;
+        border-width: 2px;
+        border-color: $border-color;
+        // background-color: red;
+        
+        input{
+            margin-inline: 13px;
+            margin-block: 15px;
+            border: none;
+            outline: none;
+            cursor:default;
+        }
+        .icon{
+            cursor: pointer;
+            margin-right: 8.9px;
+        }
+    }
+}
+
