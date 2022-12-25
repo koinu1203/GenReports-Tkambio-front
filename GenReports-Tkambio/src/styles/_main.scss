@@ -3,6 +3,7 @@
 @import './button.scss';
 @import './table.scss';
 @import './Input.scss';
+@import './dateinput.scss';
 @import './modal.scss';
 
 $background-body: #E5E5E5;
@@ -58,4 +59,18 @@ span{
     letter-spacing: 0.20000000298023224px;
     color: $spam-color;
     text-align: left;
+}
+input{
+    color: rgba(105, 105, 105, 1);
+    font-family: "ArgentumSans-Regular";
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0.25px;
+    text-align: left;
+
+}
+.icon{
+    max-width: 22px;
+    max-height: 22px;
 }
