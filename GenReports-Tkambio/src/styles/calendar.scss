@@ -1,0 +1,114 @@
+@import './colors';
+
+.calendar{
+    position:fixed;
+    background-color: $calendar-background-color !important;
+    width: 222px;
+    height: 249px;
+    z-index: 10000;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0rem 0.25rem 0.5rem;
+    thead{
+        border: none;
+    }
+    tr{
+        border: none;
+    }
+    th{
+        text-align: center !important;
+        padding: 0px;
+        min-width: 30px;
+        min-height: 50px;
+        font-weight:200 !important;
+        font-size: small;
+    }
+    td{
+        text-align: center !important;
+        padding: 0px;
+        margin: 0px;
+        justify-content: center;
+        align-content: center;
+        cursor: pointer;
+        min-width: 30px;
+        height: 30px;
+        position: relative;
+    }
+    td span{
+        font-size: 10px;
+    }
+}
+.calendar-options{
+    display: flex;
+    flex-direction: row;
+    margin-top: 2px;
+    margin-bottom: 18px;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+.calendar-content{
+    border: none !important;
+    border-collapse:collapse;
+    background-color: inherit;
+    color:$gray-color;
+    width: 100%;
+}
+.calendar-header{
+    font-size:small !important;
+}
+.calendar-body{
+    font-size:x-small !important;
+
+}
+
+.selected{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    width: 29px;
+    height: 29px;
+    position: relative;
+    z-index: 100000;
+    background-color: $select-color;
+    border-radius: 25px;
+    color: $calendar-background-color;
+}
+
+.calendar-selector{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    // gap: 10px;
+    :nth-child(1){  
+        appearance: none;
+        width: fit-content;
+    }
+}
+.calendar-selector select{
+    border: none;
+    background-color: $calendar-background-color;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: $gray-color;
+    background-repeat: no-repeat, repeat;
+    background-size: 3em auto, 100%;
+    &::-ms-expand{
+        font-family: inherit;
+        color: $gray-color;
+    }
+}
+.calendar-arrows-container{
+    align-content:space-around;
+    padding-right: 10px;
+    width: 40px;
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    
+}
+.calendar-icon{
+    color: $gray-color;
+    cursor: pointer;
+}
+
