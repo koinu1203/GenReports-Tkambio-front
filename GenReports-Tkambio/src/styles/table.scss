@@ -1,62 +1,111 @@
-$background-table: rgba(69, 99, 230, 1);
-$border-color: rgba(196, 196, 196, 1);
-$color:rgba(255, 255, 255, 1);
+@import './colors';
 
 .table-background{
-    background-color: $background-table;
+    background-color: $table-background-color;
     padding-inline: 30px;
     padding-block: 10px 30px;
     border-radius: 10px;
-    width:max-content;
+    width:fit-content;
+    @include lg{
+        width: 80%;
+    }
 }
 table{
-    background-color: $background-table;
-    color: rgba(255, 255, 255, 1);
+    background-color: $table-background-color;
+    color: $table-text-color;
 
     border-collapse:collapse;
     border-radius: 10px;
+
 }
 thead {
-    border-bottom: 4px solid $border-color
+    border-bottom: 4px solid $table-border-color;
 }
-tr:nth-child(1){
-    border-bottom: 1px solid $border-color
+tr{
+    border-bottom: 1px solid $table-border-color;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.15000000596046448px;
+
 }
-tr:nth-child(5){
+tr:last-child{
     border-bottom: none;
 }
 th{
     padding-bottom: 10px;
+    @include lg{
+        width: 80%;
+        &:nth-child(even){
+            width: fit-content;
+        }
+    }
 }
 td{
     padding-block: 15px;
     padding-inline: 73px;
+    text-align: center;
+    width: fit-content;
+    @include lg {
+        padding-inline: 10px;
+    }
 }
 table tbody tr td:nth-child(1){ padding-left: 0px; }
 table tbody tr td:nth-child(5){ padding-right: 0px; }
 .separator{
-    margin: 0px;
-    padding: 0px;
+    margin: 0px !important;
+    padding: 0px !important;
+    @include lg{
+        max-width: 4px; 
+    }
 }
 .separator-line{
-    background-color: $border-color;
+    background-color: $table-border-color;
     width: 4px;
+    max-width: 4px !important;
     height: 24px;
+    margin: 0px !important;
+    padding: 0px !important;
     position:relative;
 }
 
 
 th:nth-child(1){ text-align: left; }
-th:nth-child(3){ text-align: center; }
 th:nth-child(5){ text-align: right; }
 
-table tr td:nth-child(1){ text-align: left; }
-table tr td:nth-child(3){ text-align: center; }
-table tr td:nth-child(5){ text-align: right; }
+table tr td:nth-child(1){ 
+    text-align: left; 
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0.25px;
+
+}
+table tr td:nth-child(5){ 
+    text-align: right; 
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.15000000596046448px;
+
+}
 
 .separator-column{
     position:relative;
     width: 100%;
     height: 3px;
-    background-color: $border-color;
+    background-color: $table-border-color;
+}
+
+td a{
+    text-decoration: none;
+    &:visited{
+        color: inherit;
+    }
+
+    @include lg{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
