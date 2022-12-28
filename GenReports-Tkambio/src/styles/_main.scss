@@ -1,14 +1,14 @@
+@import './_breakpoint.scss';
+@import './_colors.scss';
+@import './_media.scss';
 @import './_fonts.scss';
 @import './header.scss';
 @import './button.scss';
 @import './table.scss';
 @import './Input.scss';
 @import './dateinput.scss';
+@import './calendar.scss';
 @import './modal.scss';
-
-$background-body: #E5E5E5;
-$spam-color: rgba(105, 105, 105, 1);
-$gray-color: rgba(86, 86, 86, 1);
 
 
 body{
@@ -70,7 +70,8 @@ input{
     text-align: left;
 
 }
-.icon{
-    max-width: 22px;
-    max-height: 22px;
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
