@@ -1,6 +1,7 @@
+@import './colors';
 header{
     overflow: hidden;
-    background: linear-gradient(180deg, #02ADF1 -2.37%, #4562E6 124.84%, #4563E6 124.84%);
+    background: $header-background;
     position:relative;
     display: flex;
     justify-content: center;
