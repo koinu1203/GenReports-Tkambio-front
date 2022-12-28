@@ -1,5 +1,5 @@
-$background-text: rgba(255, 255, 255, 1);
-$border-color:rgba(177, 177, 177, 1);
+@import './colors';
+
 .input-text{
     min-width: 221px;
     width: 100%;
