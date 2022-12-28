@@ -1,12 +1,50 @@
 <script>
 import Input from "../components/Input.vue";
-import DateInput from "../components/DateInput.vue"
+import DateInput from "../components/DateInput.vue";
+
 export default {
   name: "ReportModal",
   components: {
     Input,
-    DateInput
+    DateInput,
   },
+  methods: {
+    generateReport() {
+      this.closeModal();
+    },
+    submitEvent() {
+      // console.log("Descripcion",this.description);
+      // console.log("Inicio",this.initDate);
+      // console.log("Fin",this.finishDate);
+      this.$emit("closeModal");
+    },
+    closeModal() {
+      this.$emit("closeModal");
+    },
+    validCheck() {
+      if(this.description && this.initDate && this.finishDate && Date.parse(this.initDate)<=Date.parse(this.finishDate)){
+        this.isValidData=true;
+      }else{
+        this.isValidData=false;
+      }
+    },
+    updateInitDate(event){
+      this.initDate = event;
+      this.validCheck();
+    },
+    updateFinishDate(event){
+      this.finishDate = event;
+      this.validCheck();
+    }
+  },
+  data() {
+    return {
+      description: "",
+      initDate: null,
+      finishDate: null,
+      isValidData:false,
+    };
+  }
 };
 </script>
 
@@ -14,43 +52,47 @@ export default {
   <div class="modal">
     <div class="modal-body">
       <h2 class="modal-title">Reporte por fecha de nacimiento</h2>
-      <h3 class="modal-subtitle">Ingresa los siguientes datos para generar tu reporte</h3>
-      <div class="modal-content">
-        <Input label="Descripcion del reporte" />
+      <h3 class="modal-subtitle">
+        Ingresa los siguientes datos para generar tu reporte
+      </h3>
+      <form class="modal-content" @submit.prevent="submitEvent()">
+        <Input
+          label="Descripcion del reporte"
+          @input="
+            (event) => {
+              description = event;
+              this.validCheck();
+            }
+          "
+          required
+        />
         <span class="date-label">Fecha de nacimiento</span>
         <div class="input-date">
-          <DateInput label="Inicio" />
-          <DateInput label="Fin" />
+          <DateInput
+            label="Inicio"
+            :inputDate="initDate"
+            :maxDate="finishDate"
+            :errorMaxDate="'La fecha inicial es mayor a la final'"
+            @update-date="updateInitDate($event)"
+            required
+          />
+          <DateInput
+            label="Fin"
+            :inputDate="finishDate"
+            :minDate="initDate"
+            :errorMinDate="'La fecha final es menor a la final'"
+            @update-date=" updateFinishDate($event)"
+            required
+          />
         </div>
-        <button>Generar reporte</button>
-      </div>
+        <button :disabled="!isValidData">Generar reporte</button>
+      </form>
     </div>
   </div>
 </template>
 
 <style lang="scss">
-
-.modal-title {
-  padding-inline: 32.5px;
-  margin-bottom: 18px;
-}
-.modal-subtitle{
-    // padding-bottom: 22.5px;
-  margin-bottom: 38.5px;
-
-}
-.modal-content {
-  padding-inline: 11.5px;
-  margin-bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.date-label{
-    margin-bottom: 14.5px;
-}
-.input-date{
-    display: flex;
-    gap: 15px;
+.date-label {
+  margin-bottom: 14.5px;
 }
 </style>

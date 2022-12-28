@@ -1,7 +1,6 @@
-$background-color: rgba(0,0,0,0.4);
-$background-modal: rgba(255, 255, 255, 1);
+@import './colors';
 
-.modal{
+.modal {
     // display: none;
     position: fixed;
     display: flex;
@@ -13,13 +12,13 @@ $background-modal: rgba(255, 255, 255, 1);
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: $background-color;
+    background-color: $modal-wall-background-color;
 }
 
-.modal-body{
+.modal-body {
     border-radius: 10px;
-    position:relative;
-    background-color: $background-modal;
+    position: relative;
+    background-color: $modal-background-color;
     width: fit-content;
     max-width: 526px;
     height: fit-content;
@@ -30,4 +29,27 @@ $background-modal: rgba(255, 255, 255, 1);
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    min-width: 250px; 
+    @include md{
+        width: 80%;
+    }
+}
+
+.modal-title {
+    padding-inline: 32.5px;
+    margin-bottom: 18px;
+}
+
+.modal-subtitle {
+    // padding-bottom: 22.5px;
+    margin-bottom: 38.5px;
+
+}
+
+.modal-content {
+    padding-inline: 11.5px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
