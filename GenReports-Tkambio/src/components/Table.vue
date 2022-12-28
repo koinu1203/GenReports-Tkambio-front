@@ -1,3 +1,29 @@
+<script>
+export default {
+  props: {
+    reports: {
+      type: Array,
+      default: [
+        {
+          title: "Reporte de usuario 1",
+          creation: "04/02/2022",
+          download: "https://tkambio.com/",
+        },
+        {
+          title: "Reporte de usuario 2",
+          creation: "04/02/2022",
+          download: "https://tkambio.com/",
+        },
+        {
+          title: "Reporte de usuario 3",
+          creation: "04/02/2022",
+          download: "https://tkambio.com/",
+        },
+      ],
+    },
+  },
+};
+</script>
 <template>
   <div class="table-background">
     <table>
@@ -11,24 +37,16 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Reporte de usuario 1</td>
+        <tr v-for="report in reports">
+          <td>{{ report.title }}</td>
           <td class="separator"><div class="separator-line"></div></td>
-          <td>04/02/2022</td>
-          <td class="separator"><div class="separator-line"></div></td>
-          <td>
-            Descargar
-            <img src="../assets/svgs/download-icon.svg" alt="download icon" />
-          </td>
-        </tr>
-        <tr>
-          <td>Reporte de usuario 2</td>
-          <td class="separator"><div class="separator-line"></div></td>
-          <td>04/02/2022</td>
+          <td>{{ report.creation }}</td>
           <td class="separator"><div class="separator-line"></div></td>
           <td>
-            Descargar
-            <img src="../assets/svgs/download-icon.svg" alt="download icon" />
+            <a :href="report.download">
+              Descargar
+              <img src="../assets/svgs/download-icon.svg" alt="download icon" />
+            </a>
           </td>
         </tr>
       </tbody>
