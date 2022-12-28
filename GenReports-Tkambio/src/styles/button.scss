@@ -1,5 +1,4 @@
-$button-color : rgba(255, 190, 18, 1);
-
+@import './colors';
 
 button{
     background: $button-color;
@@ -18,7 +17,10 @@ button{
     align-self: center;
 }
 button:disabled{
-    background: rgba(207, 207, 207, 1);
+    background: $button-disable;
+    &:active{
+        background: $button-disable !important;
+    }
 }
 button:active{
     background: rgb(228, 173, 20);
