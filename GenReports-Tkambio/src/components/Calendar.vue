@@ -8,7 +8,7 @@ function getFirstDay(date) {
       return 1;
     case "Tue":
       return 2;
-    case "Wen":
+    case "Wed":
       return 3;
     case "Thu":
       return 4;
@@ -75,7 +75,9 @@ export default {
       }
       this.calendar=[];
       let i = 0;
-
+      console.log(startDay);
+      console.log(numDays);
+      console.log(startDay<1 && 10<startDay+numDays);
       this.calendar=[...Array(6)].map(()=>{
         return [...Array(7)].map(()=>{
           if(startDay<1 && i<startDay+numDays){
@@ -87,6 +89,7 @@ export default {
           }
         });
       });
+    console.log(this.calendar);
     },
     onSelectDate(event) {
       if (event != "") {
