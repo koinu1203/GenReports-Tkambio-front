@@ -112,3 +112,12 @@
     cursor: pointer;
 }
 
+.calendar-enter-active,
+.calendar-leave-active {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.calendar-enter-from,
+.calendar-leave-to {
+  opacity: 0;
+  transform: translateY(-20px);
+}
