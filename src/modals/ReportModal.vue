@@ -89,7 +89,7 @@ export default {
               label="Fin"
               :inputDate="finishDate"
               :minDate="initDate"
-              :errorMinDate="'La fecha final es menor a la final'"
+              :errorMinDate="'La fecha final es menor a la inicial'"
               @update-date="updateFinishDate($event)"
               required
             />
