@@ -1,5 +1,7 @@
 @import './colors';
 
+
+
 .modal {
     // display: none;
     position: fixed;
@@ -14,6 +16,7 @@
     overflow: auto;
     background-color: $modal-wall-background-color;
 }
+
 
 .modal-body {
     border-radius: 10px;
@@ -43,7 +46,7 @@
 .modal-enter-from,
 .modal-leave-to {
   opacity: 0;
-  transform: translateY(50px);
+  transform: translateY(10px);
 }
 
 .modal-title {
