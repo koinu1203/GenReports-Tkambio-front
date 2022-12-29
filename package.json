@@ -6,9 +6,11 @@
     "dev": "vite --port 4200",
     "build": "vite build",
     "preview": "vite preview",
+    "deploy": "gh-pages -d dist",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "gh-pages": "^4.0.0",
     "vue": "^3.2.45"
   },
   "devDependencies": {
